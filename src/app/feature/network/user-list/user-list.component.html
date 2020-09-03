@@ -1,0 +1,32 @@
+<!-- User Network Container -->
+<ng-container *ngIf="!isLoading">
+    <div class = "w-100 d-flex p-4 network-container">
+        <!-- User Detail Profile -->
+        <div class = "network-user-detail bg-white p-4 shadow rounded">
+            <app-user-profile [userProfile] = "userProfile"></app-user-profile>
+        </div>
+        <!-- User List -->
+        <div class = "network-user-list ml-auto w-25 bg-success bg-white shadow rounded">
+            <ul class = "pl-0">
+                <ng-container *ngFor = "let user of userList?.data">
+                    <li *ngIf="user?.id !== userProfile?.id" (click) = "userProfile=user" class = "d-flex border-bottom p-3 user-list">
+                        <!-- User Image -->
+                        <div class = "user-block d-flex w-25">
+                            <div class = "user-image">
+                                <img src = "{{user?.avatar}}" alt = "{{user?.first_name}}" class = "rounded-circle w-75" />
+                            </div>
+                        </div>
+                        <!-- User Details -->
+                        <div class = "user-profile">
+                            <p class = "mb-0"><span class = "text-break font-weight-bold">{{user?.first_name}} {{user?.last_name}}</span></p>
+                            <p class = "mb-0"><span class = "text-break">{{user?.email}}</span></p>
+                        </div>
+                    </li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</ng-container>
+
+<!-- Spinner for data load -->
+<app-spinner *ngIf="isLoading" [isLoading]="isLoading" class = "loading"></app-spinner>

@@ -1,0 +1,12 @@
+<!-- User Profile Container -->
+<ng-container>
+    <!-- Profile Image-->
+    <div class = "profile-image">
+        <img src = "{{userProfile?.avatar}}" alt = "{{userProfile?.first_name}}" class = "rounded-circle w-25" />
+    </div>
+    <!-- Profile Details-->
+    <div class = "profile-details mt-4">
+        <p class = "name font-weight-bold mb-0"><span>{{userProfile?.first_name}} {{userProfile?.last_name}}</span></p>
+        <p class = "email"><span>{{userProfile?.email}}</span></p>
+    </div>
+</ng-container>

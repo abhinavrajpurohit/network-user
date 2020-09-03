@@ -1,0 +1,26 @@
+/**
+ |--------------------------------------------------------------
+ | User Network SCSS!!
+ | @version 1.0.0
+ |--------------------------------------------------------------
+ */
+ $light-grey: #F5F5F5;
+
+.network-container {
+    background-color: $light-grey;
+    height: 100%;
+
+    .network-user-detail {
+        width: 73%;
+    }
+
+    .network-user-list{
+        li {
+            cursor: pointer;
+
+            &:last-child {
+                border-bottom: none !important;
+            }
+        }
+    }
+}
